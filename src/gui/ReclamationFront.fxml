@@ -3,21 +3,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.ReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReclamationController">
    <children>
-      <TextField fx:id="tfprenom" layoutX="182.0" layoutY="106.0" prefHeight="25.0" prefWidth="236.0" />
-      <TextField fx:id="tfemail" layoutX="182.0" layoutY="157.0" prefHeight="25.0" prefWidth="236.0" />
-      <TextField fx:id="tfnom" layoutX="182.0" layoutY="54.0" prefHeight="25.0" prefWidth="236.0" />
-      <TextField fx:id="tfsubject" layoutX="182.0" layoutY="207.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfprenom" layoutX="182.0" layoutY="97.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfemail" layoutX="182.0" layoutY="149.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfnom" layoutX="181.0" layoutY="47.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfsubject" layoutX="182.0" layoutY="203.0" prefHeight="25.0" prefWidth="236.0" />
       <TextField fx:id="tfmessage" layoutX="182.0" layoutY="248.0" prefHeight="91.0" prefWidth="236.0" />
-      <Text layoutX="101.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="55.13671875" />
-      <Text layoutX="101.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message" wrappingWidth="55.13671875" />
-      <Text layoutX="101.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" wrappingWidth="55.13671875" />
-      <Text layoutX="101.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="55.13671875" />
-      <Text layoutX="101.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="55.13671875" />
-      <Button fx:id="btnenvoyer" layoutX="263.0" layoutY="351.0" mnemonicParsing="false" text="Envoyer" />
+      <Text layoutX="101.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="55.13671875" />
+      <Text layoutX="101.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message" wrappingWidth="55.13671875" />
+      <Text layoutX="101.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" wrappingWidth="55.13671875" />
+      <Text layoutX="101.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="55.13671875" />
+      <Text layoutX="101.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="55.13671875" />
+      <Button fx:id="btnenvoyer" layoutX="257.0" layoutY="351.0" mnemonicParsing="false" onAction="#passToR2" prefHeight="25.0" prefWidth="71.0" text="Envoyer" />
+      <Text layoutX="229.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reclamation" wrappingWidth="156.13671875">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
