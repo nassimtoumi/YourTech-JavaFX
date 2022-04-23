@@ -45,9 +45,11 @@ public class ReclamationController implements Initializable {
         // TODO
     }    
 
+    
+
     @FXML
-    private void passToR2(java.awt.event.ActionEvent event) {
-         try {
+    private void passToR2(ActionEvent event) {
+    try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Reclamation2.fxml"));
             Parent root =loader.load();
             Reclamation2Controller cc= loader.getController();
