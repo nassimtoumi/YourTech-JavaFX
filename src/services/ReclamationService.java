@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.MyDB;
 
 /**
@@ -38,7 +40,7 @@ public class ReclamationService {
     
     public void ajoutereclamation(Reclamation c)
     {
-        String req = "insert into reclamation (nom, prenom, email,subject,message) values  ('" + c.getNom()+"','" + c.getPrenom()+  "','" + c.getEmail()+ "','" + c.getSubject()+"','" + c.getMessage() +"')"; 
+        String req = "insert into reclamation (nom, prenom, email,sujet,message) values  ('" + c.getNom()+"','" + c.getPrenom()+  "','" + c.getEmail()+ "','" + c.getSujet()+"','" + c.getMessage() +"')"; 
    
     try 
     {
@@ -67,9 +69,9 @@ public class ReclamationService {
             r.setId(rs.getInt("id")); 
             r.setNom(rs.getString("nom"));
             r.setEmail(rs.getString("email"));
-            r.setSubject(rs.getString("subject"));
+            r.setSujet(rs.getString("sujet"));
             r.setMessage(rs.getString("message"));
-            r.setEtat(rs.getInt("etat"));
+            
             
             list.add(r);
             
@@ -85,7 +87,7 @@ public class ReclamationService {
     
     public List <Reclamation> liste2()
     {
-        String req = "select id, nom, prenom, email, subject, message, etat from reclamation"; 
+        String req = "select id, nom, prenom, email, sujet, message from reclamation"; 
         
        List <Reclamation> list = new ArrayList<>(); 
        try {
@@ -94,7 +96,7 @@ public class ReclamationService {
        
        while (rs.next())
        {
-           list.add(new Reclamation(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("subject"),rs.getString("message"),rs.getInt("etat"))); 
+           list.add(new Reclamation(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("subject"),rs.getString("message"))); 
        }
        
        
@@ -120,8 +122,8 @@ public class ReclamationService {
      }
      
        
-      public void modifierreclamation (int etat, int id){
-         String requete="UPDATE reclamation SET etat='"+etat+"' where id = '"+id+"'";
+      public void modifierreclamation ( int id){
+         String requete="UPDATE reclamation where id = '"+id+"'";
          
 
          
@@ -134,26 +136,26 @@ public class ReclamationService {
         }
      }
      
-//     public ObservableList<Reclamation> getReclamationList() throws SQLException {
-//           
-//        ObservableList<Reclamation> reclamationlist = FXCollections.observableArrayList();
-//        
-//         List <Reclamation> rec = new ArrayList<>(); 
-//        Statement stm = conn.createStatement();
-//        String query = "select id, nom, prenom, email, subject, message, etat from reclamation";
-//
-//        //ResultSet rs;
-//        rs = stm.executeQuery(query);
-//        Reclamation reclamation;
-//        while (rs.next()) {
-//           Reclamation = new Reclamation(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("subject"), rs.getString("message"),rs.getInt("etat")); 
-//            //System.out.println(events);
-//            reclamationlist.add(Reclamation);
-//
-//        }
-//        return reclamationlist;
-//
-//    }
+     public ObservableList<Reclamation> getReclamationList() throws SQLException {
+           
+        ObservableList<Reclamation> reclamationlist = FXCollections.observableArrayList();
+        
+         List <Reclamation> rec = new ArrayList<>(); 
+        Statement stm = cnx.createStatement();
+        String query = "select id, nom, prenom, email, sujet, message from reclamation";
+
+        //ResultSet rs;
+        rs = stm.executeQuery(query);
+        Reclamation reclamation;
+        while (rs.next()) {
+           reclamation = new Reclamation(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("sujet"), rs.getString("message")); 
+            //System.out.println(events);
+            reclamationlist.add(reclamation);
+
+        }
+        return reclamationlist;
+
+    }
      
     //public ObservableList<Reclamation> getReclamationListnew() throws SQLException {
     //    String req = "select  id,nom, prenom, email,subject,message etat from reclamation";
@@ -175,6 +177,10 @@ public class ReclamationService {
         //return list;
 
     //}
+
+    public void modifierreclamation(Reclamation rec) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     
 }

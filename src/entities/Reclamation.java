@@ -15,45 +15,37 @@ public class Reclamation {
     private String nom; 
     private String prenom; 
     private String email; 
-    private String subject;
+    private String sujet;
     private String message;
 
-    private int etat = 0;
     
     
     public Reclamation()
     {
         
     }
-    public Reclamation( int id, String nom, String prenom, String email, String subject, String message, int etat)
+    public Reclamation( int id, String nom, String prenom, String email, String sujet, String message)
     {
         this.id=id; 
         this.nom=nom; 
         this.prenom=prenom; 
         this.email=email; 
-        this.subject=subject; 
+        this.sujet=sujet; 
         this.message=message; 
-        this.etat=etat;
+        //this.etat=etat;
     }
 
     
-      public Reclamation( String nom, String prenom, String email, String subject, String message, int etat)
+      public Reclamation( String nom, String prenom, String email, String sujet, String message)
     {
         this.nom=nom; 
         this.prenom=prenom; 
         this.email=email; 
-        this.subject=subject; 
+        this.sujet=sujet; 
         this.message=message; 
-        this.etat=etat;
+        
     }
-      public Reclamation(String nom, String prenom, String email, String subject, String message )
-    {
-        this.nom=nom; 
-        this.prenom=prenom; 
-        this.email=email; 
-        this.subject=subject; 
-        this.message=message; 
-    }
+      
     
 
        public int getId()
@@ -68,13 +60,10 @@ public class Reclamation {
    public String getEmail()
    { return email; }
    
-   public String getSubject()
-   { return subject; }
+   public String getSujet()
+   { return sujet; }
       public String getMessage()
    { return message;}
-      
-          public int getEtat()
-   { return etat;}
       
   public void setId(int id) {
         this.id = id;
@@ -90,8 +79,8 @@ public class Reclamation {
    public void setEmail(String email)
    {this.email=email;}
    
-   public void setSubject(String subject)
-   {this.subject=subject ;}
+   public void setSujet(String subject)
+   {this.sujet=sujet ;}
    
    
    
@@ -100,14 +89,11 @@ public class Reclamation {
    
 
    
-   public void setEtat(int etat)
-   {this.etat=etat;}
-   
    
   @Override 
   public String toString()
   {
-      return "article{" + "id=" +id + ", nom=" + nom + ", prenom=" + prenom +  "email=" + email +", subject=" + subject + ",message=" + message + ",etat" + etat + '}'; 
+      return "article{" + "id=" +id + ", nom=" + nom + ", prenom=" + prenom +  "email=" + email +", subject=" + sujet + ",message=" + message + '}'; 
   }
     
 }
