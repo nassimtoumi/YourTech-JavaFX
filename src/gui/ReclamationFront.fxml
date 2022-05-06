@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReclamationController">
+   <children>
+      <TextField fx:id="tfprenom" layoutX="81.0" layoutY="85.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfemail" layoutX="81.0" layoutY="118.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfnom" layoutX="81.0" layoutY="56.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfsujet" layoutX="81.0" layoutY="149.0" prefHeight="25.0" prefWidth="236.0" />
+      <TextField fx:id="tfmessage" layoutX="81.0" layoutY="186.0" prefHeight="91.0" prefWidth="236.0" />
+      <Text layoutX="32.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="55.13671875" />
+      <Text layoutX="26.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message" wrappingWidth="55.13671875" />
+      <Text layoutX="30.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet" wrappingWidth="55.13671875" />
+      <Text layoutX="30.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="55.13671875" />
+      <Text layoutX="30.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" wrappingWidth="55.13671875" />
+      <Button fx:id="btnenvoyer" layoutX="158.0" layoutY="291.0" mnemonicParsing="false" onAction="#ajouterreclamation" prefHeight="25.0" prefWidth="71.0" text="Envoyer" />
+      <Text layoutX="279.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Reclamation" wrappingWidth="269.13671875">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <TableView fx:id="afficherreclamation" layoutX="336.0" layoutY="56.0" prefHeight="221.0" prefWidth="451.0">
+        <columns>
+          <TableColumn fx:id="idrec" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="nomrec" prefWidth="65.0" text="Nom" />
+            <TableColumn fx:id="prenomrec" prefWidth="71.0" text="Prénom" />
+            <TableColumn fx:id="emailrec" prefWidth="107.0" text="Email" />
+            <TableColumn fx:id="sujetrec" prefWidth="47.0" text="Sujet" />
+            <TableColumn fx:id="messagerec" prefWidth="125.0" text="Message" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnsupprimer" layoutX="388.0" layoutY="291.0" mnemonicParsing="false" onAction="#supprimerrecbtn" text="Supprimer" />
+      <Button fx:id="btnmodifier" layoutX="484.0" layoutY="291.0" mnemonicParsing="false" onAction="#modifierrecbtn" prefHeight="25.0" prefWidth="80.0" text="Modifier" />
+      <Button fx:id="btnexcel" layoutX="675.0" layoutY="291.0" mnemonicParsing="false" onAction="#execlrec" prefHeight="25.0" prefWidth="55.0" text="Excel" />
+   </children>
+</AnchorPane>
