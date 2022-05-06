@@ -179,28 +179,28 @@ public class ReclamationService {
     //}
 
     public boolean modifierreclamation(Reclamation recm) {
-Connection cnx =null;
-        Statement st = null;
-        
-        
-        String requette = "UPDATE reclamation SET nom='"+recm.getNom()+"',prenom='"+recm.getPrenom()+"',email='"+recm.getEmail()+"',sujet='"+recm.getSujet()+"',message='"+recm.getMessage()+"' WHERE id="+recm.getId()+"";
-        try {
-  cnx = MyDB.getInstance().getCnx();            st = cnx.createStatement();
-            st.executeUpdate(requette);
-            return true;
-            
-           
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return false;
-        }finally {
-    
-    if (st != null) {
-        try {
-            st.close();
-        } catch (SQLException e) { /* Ignored */}
-    }
-    }}
-
-    
-}
+//Connection cnx =null;
+//        Statement st = null;
+//        
+//        
+//        String requette = "UPDATE reclamation SET nom='"+recm.getNom()+"',prenom='"+recm.getPrenom()+"',email='"+recm.getEmail()+"',sujet='"+recm.getSujet()+"',message='"+recm.getMessage()+"' WHERE id="+recm.getId()+"";
+//        try {
+//  cnx = MyDB.getInstance().getCnx();            st = cnx.createStatement();
+//            st.executeUpdate(requette);
+//            return true;
+//            
+//           
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//            return false;
+//        }finally {
+//    
+//    if (st != null) {
+//        try {
+//            st.close();
+//        } catch (SQLException e) { /* Ignored */}
+//    }
+//    }}
+//
+//    
+//}
